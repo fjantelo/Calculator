@@ -55,21 +55,27 @@ namespace Experiment
 			return z;*/
 
 			// Second Approach
-			double z = 1;
-			int absY = y < 0 ? y * -1 : y;
-
-			for(int i = 0; i < absY; i++) {
-				z *= x;
-			}
-
-			return y < 0 ? 1 / z : z;
+//
+//			double z = 1;
+//			int absY = y < 0 ? y * -1 : y;
+//
+//			for(int i = 0; i < absY; i++) {
+//				z *= x;
+//			}
+//
+//			return y < 0 ? 1 / z : z;
 
 			// Third Approach
 			return RecursivePower(x, y);
 		}
 
 		private double RecursivePower(double x, int y) {
-			return 0;
+			if (y == 0)
+				return 1;
+			else if (y < 0)
+				return (1/x) * RecursivePower(x,y+1);
+			else
+				return x * RecursivePower (x, y - 1);
 		}
 	}
 }
