@@ -36,6 +36,19 @@ namespace ExperimentTests
 			Assert.AreEqual (2, test.Divide(10,5));
 			Assert.Throws<DivideByZeroException> (() => { test.Divide(5,0); });
 		}
+
+		[Test()]
+		public void TestSquare (){
+			Assert.AreEqual (25, test.Square (5));
+		}
+
+		[Test()]
+		public void TestPower (){
+			Assert.AreEqual (4, test.Power (2, 2));
+			Assert.AreEqual (8, test.Power (2, 3));
+			Assert.AreEqual (1, test.Power (69, 0));
+			Assert.AreEqual (0.25, test.Power (2, -2));
+		}
 	}
 }
 

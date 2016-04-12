@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Experiment
+namespace Experiment2
 {
 	class MainClass
 	{
@@ -13,5 +13,9 @@ namespace Experiment
 		{
 			return x + y;
 		}
+	}
+
+	class Calculator {
+		
 	}
 }
