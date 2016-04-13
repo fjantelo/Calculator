@@ -7,7 +7,7 @@ namespace ExperimentTests
 	[TestFixture ()]
 	public class Test
 	{
-		Calculator test;
+		ICalculator test;
 
 		[SetUp]
 		public void Setup() {
@@ -24,6 +24,7 @@ namespace ExperimentTests
 		[Test ()]
 		public void TestSubtract (){
 			Assert.AreEqual (5, test.Subtract (7,2)); 
+			Calculator x = new Calculator();
 		}
 
 		[Test ()]

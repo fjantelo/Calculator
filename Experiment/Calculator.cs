@@ -2,7 +2,7 @@
 
 namespace Experiment
 {
-	public class Calculator
+	public class Calculator : ICalculator
 	{
 		public Calculator ()
 		{
@@ -28,7 +28,7 @@ namespace Experiment
 			return x/y;
 		}
 
-		public int Sqrt (){
+		public int Sqrt (int x){
 			return 0;
 		}
 
@@ -69,7 +69,7 @@ namespace Experiment
 			return RecursivePower(x, y);
 		}
 
-		private double RecursivePower(double x, int y) {
+		public double RecursivePower(double x, int y) {
 			if (y == 0)
 				return 1;
 			else if (y < 0)
