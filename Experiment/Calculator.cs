@@ -2,13 +2,8 @@
 
 namespace Experiment
 {
-	public class Calculator : ICalculator
+	public abstract class Calculator : ICalculator
 	{
-		public Calculator ()
-		{
-
-		}
-
 		public int Add (int x, int y){
 			return x+y;
 		}
@@ -36,47 +31,7 @@ namespace Experiment
 			return x*x;
 		}
 
-		public double Power(double x, int y){
-			// First Approach
-			/*double z=1;
-
-			if (y < 0){
-				for (int i = 0; i < y*-1; i++) {
-					z = z / x;
-				}
-			}
-
-			else {
-				for (int i = 0; i < y; i++) {
-					z = x * z;
-				}
-			}
-
-			return z;*/
-
-			// Second Approach
-//
-//			double z = 1;
-//			int absY = y < 0 ? y * -1 : y;
-//
-//			for(int i = 0; i < absY; i++) {
-//				z *= x;
-//			}
-//
-//			return y < 0 ? 1 / z : z;
-
-			// Third Approach
-			return RecursivePower(x, y);
-		}
-
-		public double RecursivePower(double x, int y) {
-			if (y == 0)
-				return 1;
-			else if (y < 0)
-				return (1/x) * RecursivePower(x,y+1);
-			else
-				return x * RecursivePower (x, y - 1);
-		}
-	}
+        public abstract double Power(double x, int y);
+    }
 }
 

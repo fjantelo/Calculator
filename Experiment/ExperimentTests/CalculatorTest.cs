@@ -4,27 +4,27 @@ using Experiment;
 
 namespace ExperimentTests
 {
-	[TestFixture ()]
-	public class Test
+	[TestFixture (typeof(LoopCalculator))]
+    [TestFixture(typeof(RecursiveCalculator))]
+    public class Test<T> where T : ICalculator, new()
 	{
-		ICalculator test;
+		ICalculator test;                
 
 		[SetUp]
 		public void Setup() {
-			test = new Calculator ();
+			test = new T();
 		}
 
 		[Test ()]
 		public void TestAdd ()
 		{
 			Assert.AreEqual(12, test.Add (5, 7));
-			Assert.AreEqual (60, test.Add (61,-1));
+			Assert.AreEqual (60, test.Add (61,-1));            
 		}
 
-		[Test ()]
+        [Test ()]
 		public void TestSubtract (){
-			Assert.AreEqual (5, test.Subtract (7,2)); 
-			Calculator x = new Calculator();
+			Assert.AreEqual (5, test.Subtract (7,2)); 			
 		}
 
 		[Test ()]
