@@ -81,7 +81,7 @@ namespace BasicsTests
         }
 
         /// <summary>
-        /// Basic Test. If the following are pushed into the stack in order:
+        /// Basic Test. If the following are pushed into the queue in order:
         /// 5 -1 1 3 -8 10 6 11 11
         /// Then the following should be popped off the stack in the below order:
         /// 5 -1 1 3 -8 10 6 11 11
