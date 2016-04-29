@@ -14,6 +14,14 @@ namespace Basics.Queue
     /// </summary>
     public class ArrayQueue : IQueue
     {
+		int[] queue;
+		int size = 0;
+
+		public ArrayQueue() 
+		{
+			queue = new int[0];
+		}
+
         public int Peek()
         {
             throw new NotImplementedException();
@@ -26,12 +34,18 @@ namespace Basics.Queue
 
         public void Push(int value)
         {
-            throw new NotImplementedException();
+			int[] temp = new int[Size()+1];
+			for(int i = 0 ; i < Size() ; i++){
+				temp[i] = queue[i];
+			}
+			temp [Size()] = value;
+			queue = temp;
+			size++;
         }
 
         public int Size()
         {
-            throw new NotImplementedException();
+			return size;
         }
     }
 }
