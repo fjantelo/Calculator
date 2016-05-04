@@ -31,6 +31,8 @@ namespace BasicsTests
         [Test()]
         public void PopTest1()
         {
+			var temp = new ObjectQueue ();
+			var size = temp.Size ();
             Assert.Throws<InvalidOperationException>(() => { test.Pop(); });
         }
 

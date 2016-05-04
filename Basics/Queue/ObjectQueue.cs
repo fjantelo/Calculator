@@ -33,3 +33,4 @@ namespace Basics.Queue
             throw new NotImplementedException();
         }
     }
+}

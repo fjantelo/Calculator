@@ -24,12 +24,19 @@ namespace Basics.Queue
 
         public int Peek()
         {
-            throw new NotImplementedException();
+			return queue [0];
         }
 
         public int Pop()
         {
-            throw new NotImplementedException();
+			int x = queue [0];
+			int[] temp = new int[Size() - 1];
+			for (int i = 0 ; i < Size() ; i++){
+				temp [i] = queue [i + 1];
+			}
+			queue = temp;
+			size--;
+			return x;
         }
 
         public void Push(int value)
